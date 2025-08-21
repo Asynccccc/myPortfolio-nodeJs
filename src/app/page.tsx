@@ -1,6 +1,37 @@
 'use client';
+import { useState } from "react";
 import Typewriter from 'typewriter-effect';
 export default function Home() {
+  const skills = [
+  { name: "Next.js", rating: 55, description: "This is my first time actually using Next.js in a project. I kind of understand the basics of rendering methods ike SSR being server requests, SSG being pre-rendered at build time, and CSR… well, I still don’t fully get that one yet. Right now, I’m just applying what I learn from tutorials and documentation, so I’d say I’m still a beginner here.",
+    next: "My next step is to build a project that mixes SSR and SSG, start learning how to fetch data the proper way with API routes, and eventually dive into middleware, authentication, and the newer App Router features." },
+  { name: "Php", rating: 80, description: "I feel pretty confident with PHP. I’ve worked with variables, arrays, loops, and conditionals, and I even touched OOP a few times for assignments. I know how GET and POST requests work, and I’ve practiced RESTful APIs with Postman. I’ve also built projects with Laravel, including a CRUD app that used tables for teachers and students. Honestly, PHP was my main playground before I shifted more into JavaScript. I’d say I was a real PHP glazer back then.",
+    next: "Next, I should go deeper into advanced Laravel concepts such as authentication, middleware, and API development, while also improving my database optimization skills with MySQL and exploring deployment strategies for real-world PHP applications." },
+  { name: "JavaScript", rating: 40, description: "I know the basics like using var, let, and const, and I’ve done simple DOM manipulation before, like making a wardrobe feature for an assignment. I can debug with console logs and DevTools, but I haven’t really touched async/await, APIs, or advanced concepts yet. Honestly, I still think more in PHP terms when I code, so I’d say I’m still at a beginner level in JavaScript.",
+    next: "My next step is to properly learn ES6+ features, practice fetching data with APIs, and get comfortable with promises and async/await. Once I get the fundamentals solid, I want to dive into OOP in JavaScript and explore closures and the event loop so I can think more natively in JS." },
+  { name: "Luau", rating: 84, description: "I’ve built multiple systems in Roblox using Luau — from combat mechanics and shops to datastores for saving stats, currencies, and fighting styles. I regularly use RemoteEvents, RemoteFunctions, and ModuleScripts to keep my projects efficient and reusable, and I’ve even experimented with metatables. I’d say I’m very confident scripting in Roblox, though I still need to push into optimization and advanced CFrame/Vector3 math to reach the next level.",
+    next: "My next step is to learn performance optimization with RunService, master OOP patterns using metatables, and improve my use of CFrame and Vector3 for advanced mechanics. I also want to strengthen security in client-server communication and build scalable multiplayer systems for larger games." },
+  { name: "Git", rating: 65, description: "I’ve used Git a lot already — initializing repositories, cloning projects, and working with commits feel natural to me now. I’ve also created branches in team projects, though I still think of them more like backups than proper workflows. Collaborating with friends through GitHub (pushing, pulling, and merging) has given me hands-on experience, but I haven’t really dealt with merge conflicts or undo commands yet. I’d say I’m sitting at a beginner-intermediate level.",
+    next: "My next step is to properly understand branching strategies and learn how to resolve merge conflicts. I also want to explore advanced workflows like rebasing, stashing, and squashing commits, as well as using Git in CI/CD pipelines to improve team collaboration." },
+  { name: "MySQL", rating: 72, description: "I’ve built plenty of databases and tables, and I’m very comfortable with CRUD queries like SELECT, INSERT, UPDATE, and DELETE. I understand relationships with primary and foreign keys, and I’ve learned normalization from 1NF to 3NF to avoid redundancy. I’ve also experimented with stored procedures and functions, and I’ve connected MySQL with Laravel/PHP for CRUD apps. While I have strong fundamentals, I haven’t really explored indexes, optimization, or handling large datasets yet.",
+    next: "My next step is to dive into optimization: using indexes effectively, analyzing queries with EXPLAIN, and working with larger datasets. I also want to deepen my understanding of transactions, isolation levels, and backups so I can move from database design into real-world scaling and performance tuning." },
+  { name: "TailwindCSS", rating: 75, description: "I know how to use Tailwind for layouts, spacing, typography, and responsive design. I can style most UI elements, but I’m still missing some mastery with transitions, pseudo-states, arbitrary values, dark mode, and deeper Tailwind config customization.",
+    next: "I’ll practice building real-world components like cards, dashboards, navbars, and hero sections. I’ll also work on responsive + interactive states (hover, focus, active) and start experimenting with dark mode and config customization to push myself toward advanced level." }
+];
+
+
+  type Skill = {
+  name: string;
+  rating: number;
+  description: string;
+  next: string;
+};
+
+const [selectedSkill, setSelectedSkill] = useState<Skill | null>(null);
+
+
+  const overall = Math.round(skills.reduce((sum, s) => sum + s.rating, 0) / skills.length);
+
   return (
     <div className="min-h-screen animated-gradient text-white font-body select-none">
       <div className="blob blob1 -z-10"></div>
@@ -87,21 +118,62 @@ export default function Home() {
         <p className='text-center pt-1 text-[14.6px]'>All of my projects are unfinished bruh 😂</p>
       </section>
 
-      <section id="skills" className="py-20 px-6 max-w-4xl mx-auto text-center">
-        <h3 className="text-[37.5px] font-bold font-heading mb-10">Skills</h3>
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-base">
-          {["Next.js", "React", "Php", "JavaScript", "Luau", "Git", "Figma"].map(
-            (skill, i) => (
-              <div
-                key={i}
-                className="p-4 rounded-lg bg-white/10 shadow-md hover:bg-white/20 transition text-[14.6px]"
-              >
-                {skill}
-              </div>
-            )
-          )}
-        </div>
-      </section>
+      <section id="skills" className="py-20 px-6 max-w-4xl mx-auto text-center relative">
+  <h3 className="text-[37.5px] font-bold font-heading mb-10">Skills</h3>
+
+  <div className="max-w-md mx-auto text-left space-y-2">
+    {skills.map((skill, i) => (
+      <button
+        key={i}
+        onClick={() => setSelectedSkill(skill)}
+        className="w-full flex justify-between items-center px-4 py-2 
+                   rounded-md bg-black/40 hover:bg-white/10 transition cursor-pointer"
+      >
+        <span className="text-yellow-300 text-[16px]">{skill.name}</span>
+        <span className="bg-yellow-400 text-black font-bold px-3 py-1 rounded-md">
+          {skill.rating}
+        </span>
+      </button>
+    ))}
+  </div>
+
+  {/* Overall at the bottom */}
+  <div className="mt-6 flex justify-between items-center px-4 py-2 
+                  bg-purple-600 rounded-md shadow-lg">
+    <span className="font-bold text-lg">Overall</span>
+    <span className="bg-white text-black font-bold px-3 py-1 rounded-md">{overall}</span>
+  </div>
+
+  {/* Floating stat card */}
+  {selectedSkill && (
+    <div className="fixed inset-0 flex justify-center items-center bg-black/50 z-50">
+      <div className="bg-white/10 backdrop-blur-xl p-8 rounded-2xl shadow-2xl relative w-[360px]">
+        {/* Close button */}
+        <button
+          onClick={() => setSelectedSkill(null)}
+          className="absolute top-2 right-2 px-2 py-1 rounded bg-purple-600 hover:bg-purple-700 text-sm"
+        >
+          X
+        </button>
+
+        <h4 className="text-[23.4px] font-bold mb-4">
+          {selectedSkill.name}
+        </h4>
+
+        <p className="text-[14.6px] opacity-80 mb-3">
+          <span className="font-semibold text-purple-300">Mastered:</span> {selectedSkill.description}
+        </p>
+        <p className="text-[14.6px] opacity-80">
+          <span className="font-semibold text-pink-300">Currently Learning:</span> {selectedSkill.next}
+        </p>
+
+        <hr className="my-4 border-white/20" />
+        <p className="text-[20px] font-bold">Rating: {selectedSkill.rating}</p>
+      </div>
+    </div>
+  )}
+</section>
+
 
       <section id="contact" className="py-20 px-6 text-center max-w-3xl mx-auto">
         <h3 className="text-[37.5px] font-heading mb-6 font-bold">Contact Me</h3>
