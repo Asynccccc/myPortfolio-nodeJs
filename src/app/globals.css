@@ -46,14 +46,22 @@ body {
   animation: gradientMove 15s ease infinite;
 }
 
-/* Main glass effect */
+.animated-aspiring-gradient {
+  background: linear-gradient(-45deg, #9333EA, #2563EB, #06B6D4, #22C55E);
+  background-size: 400% 400%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+  animation: gradientMove 6s ease infinite;
+}
+
 .glass-nav {
   background: rgba(255, 255, 255, 0.08);
   backdrop-filter: blur(14px);
   -webkit-backdrop-filter: blur(14px);
 }
 
-/* Gradient border for glassmorphism */
 .glass-border {
   position: relative;
 }
