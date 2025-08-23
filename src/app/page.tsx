@@ -142,7 +142,7 @@ export default function Home() {
 
       <section
         id="home"
-        className="min-h-[85vh] flex flex-col justify-center items-center text-center px-4 sm:px-6 pt-24 sm:pt-28 md:pt-36 mb-20 z-10">
+        className="min-h-[85vh] flex flex-col justify-center items-center text-center px-4 sm:px-6 pt-24 sm:pt-28 md:pt-36 mb-20 z-10 relative">
         <h2 className="font-heading font-bold mb-4 text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl">
           Hi, I’m <span className="text-purple-400">Dzaki</span>.
         </h2>
