@@ -79,11 +79,13 @@ export default function Home() {
   const navItems = ['Home', 'About', 'Projects', 'Skills', 'Contact'];
 
   return (
-    <div className="min-h-screen animated-gradient text-white font-body select-none scroll-smooth">
-      <Starfield />
-      <div className="blob blob1 -z-10" />
-      <div className="blob blob2 -z-10" />
-      <div className="blob blob3 -z-10" />
+    <div className="min-h-screen animated-gradient text-white font-body select-none scroll-smooth overflow-x-hidden">    
+      <div className="absolute inset-0 overflow-hidden">
+        <Starfield />
+        <div className="blob blob1 -z-10" />
+        <div className="blob blob2 -z-10" />
+        <div className="blob blob3 -z-10" />
+      </div>
 
       <header className="fixed top-3 left-1/2 -translate-x-1/2 w-full max-w-5xl px-3 sm:px-6 z-50">
         <nav className="glass-nav px-4 sm:px-6 py-2.5 sm:py-3 flex items-center justify-between rounded-2xl shadow-lg glass-border border border-white/10">
