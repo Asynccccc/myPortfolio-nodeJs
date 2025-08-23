@@ -178,7 +178,7 @@ export default function Home() {
 
       <section
         id="about"
-        className="py-16 sm:py-20 md:py-24 px-4 sm:px-6 max-w-4xl mx-auto text-center space-y-6 sm:space-y-8 scroll-mt-28 -z-10">
+        className="py-16 sm:py-20 md:py-24 px-4 sm:px-6 max-w-4xl mx-auto text-center space-y-6 sm:space-y-8">
         <h3 className="text-3xl sm:text-4xl md:text-[37.5px] font-heading font-bold mb-2">
           About <span className="text-purple-400">Me</span>
         </h3>
