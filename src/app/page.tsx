@@ -79,14 +79,15 @@ export default function Home() {
   const navItems = ['Home', 'About', 'Projects', 'Skills', 'Contact'];
 
   return (
-    <div className="min-h-screen animated-gradient text-white font-body select-none scroll-smooth overflow-x-hidden">    
-      <div className="inset-0 top-0 left-0 w-full overflow-hidden">
-        <Starfield />
+    <div className="min-h-screen animated-gradient text-white font-body select-none scroll-smooth overflow-x-hidden">
+      <Starfield />
+      <div className="absolute inset-0 top-0 left-0 w-full h-[2000px] overflow-hidden">
         <div className="blob blob1 -z-10" />
         <div className="blob blob2 -z-10" />
         <div className="blob blob3 -z-10" />
+        <br />
+        <br />
       </div>
-
       <header className="fixed top-3 left-1/2 -translate-x-1/2 w-full max-w-5xl px-3 sm:px-6 z-50">
         <nav className="glass-nav px-4 sm:px-6 py-2.5 sm:py-3 flex items-center justify-between rounded-2xl shadow-lg glass-border border border-white/10">
           <a href="#home" className="font-heading font-bold text-lg sm:text-xl tracking-wide">
@@ -141,7 +142,7 @@ export default function Home() {
 
       <section
         id="home"
-        className="min-h-[85vh] flex flex-col justify-center items-center text-center px-4 sm:px-6 pt-24 sm:pt-28 md:pt-36 z-10">
+        className="min-h-[85vh] flex flex-col justify-center items-center text-center px-4 sm:px-6 pt-24 sm:pt-28 md:pt-36 mb-20 z-10">
         <h2 className="font-heading font-bold mb-4 text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl">
           Hi, I’m <span className="text-purple-400">Dzaki</span>.
         </h2>
@@ -178,7 +179,7 @@ export default function Home() {
 
       <section
         id="about"
-        className="py-16 sm:py-20 md:py-24 px-4 sm:px-6 max-w-4xl mx-auto text-center space-y-6 sm:space-y-8">
+        className="py-16 sm:py-20 md:py-24 px-4 sm:px-6 max-w-4xl mx-auto text-center space-y-6 sm:space-y-8 relative overflow-hidden">
         <h3 className="text-3xl sm:text-4xl md:text-[37.5px] font-heading font-bold mb-2">
           About <span className="text-purple-400">Me</span>
         </h3>
@@ -200,6 +201,7 @@ export default function Home() {
           My focus is on building fast, accessible, and visually appealing apps that
           bring value to users.
         </p>
+
       </section>
 
       <section
