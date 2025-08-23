@@ -179,10 +179,10 @@ export default function Home() {
       <section
         id="about"
         className="py-16 sm:py-20 md:py-24 px-4 sm:px-6 max-w-4xl mx-auto text-center space-y-6 sm:space-y-8">
-        <h3 className="text-3xl sm:text-4xl md:text-[37.5px] font-heading font-bold mb-2">
+        <h3 className="text-3xl sm:text-4xl md:text-[37.5px] font-heading font-bold mb-2 -z-10">
           About <span className="text-purple-400">Me</span>
         </h3>
-        <p className="leading-relaxed text-base sm:text-lg md:text-[23.4px] text-gray-200">
+        <p className="leading-relaxed text-base sm:text-lg md:text-[23.4px] text-gray-200 -z-10">
           I am an
           <span className="animated-aspiring-gradient font-semibold"> aspiring </span>
           <span className="text-purple-400 font-semibold">fullstack developer </span>
