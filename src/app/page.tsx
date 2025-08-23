@@ -80,7 +80,7 @@ export default function Home() {
 
   return (
     <div className="min-h-screen animated-gradient text-white font-body select-none scroll-smooth overflow-x-hidden">    
-      <div className="absolute inset-0 overflow-hidden">
+      <div className="absolute inset-0 overflow-auto">
         <Starfield />
         <div className="blob blob1 -z-10" />
         <div className="blob blob2 -z-10" />
@@ -141,7 +141,7 @@ export default function Home() {
 
       <section
         id="home"
-        className="min-h-[85vh] flex flex-col justify-center items-center text-center px-4 sm:px-6 pt-24 sm:pt-28 md:pt-36">
+        className="min-h-[85vh] flex flex-col justify-center items-center text-center px-4 sm:px-6 pt-24 sm:pt-28 md:pt-36 z-10">
         <h2 className="font-heading font-bold mb-4 text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl">
           Hi, I’m <span className="text-purple-400">Dzaki</span>.
         </h2>
@@ -179,10 +179,10 @@ export default function Home() {
       <section
         id="about"
         className="py-16 sm:py-20 md:py-24 px-4 sm:px-6 max-w-4xl mx-auto text-center space-y-6 sm:space-y-8">
-        <h3 className="text-3xl sm:text-4xl md:text-[37.5px] font-heading font-bold mb-2 -z-10">
+        <h3 className="text-3xl sm:text-4xl md:text-[37.5px] font-heading font-bold mb-2">
           About <span className="text-purple-400">Me</span>
         </h3>
-        <p className="leading-relaxed text-base sm:text-lg md:text-[23.4px] text-gray-200 -z-10">
+        <p className="leading-relaxed text-base sm:text-lg md:text-[23.4px] text-gray-200">
           I am an
           <span className="animated-aspiring-gradient font-semibold"> aspiring </span>
           <span className="text-purple-400 font-semibold">fullstack developer </span>
