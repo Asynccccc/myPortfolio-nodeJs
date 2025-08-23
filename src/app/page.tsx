@@ -80,7 +80,7 @@ export default function Home() {
 
   return (
     <div className="min-h-screen animated-gradient text-white font-body select-none scroll-smooth overflow-x-hidden">    
-      <div className="absolute inset-0 overflow-auto">
+      <div className="inset-0 top-0 left-0 w-full overflow-hidden">
         <Starfield />
         <div className="blob blob1 -z-10" />
         <div className="blob blob2 -z-10" />

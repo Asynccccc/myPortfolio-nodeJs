@@ -84,7 +84,7 @@ body {
 .blob {
   position: absolute;
   width: 350px;
-  height: 350px;
+  height: 400px;
   background: linear-gradient(135deg, #6366f1, #9333ea);
   border-radius: 50%;
   filter: blur(120px);
