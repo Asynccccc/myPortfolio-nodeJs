@@ -2,6 +2,9 @@
 import { useState } from 'react';
 import Typewriter from 'typewriter-effect';
 import Starfield from '../../components/Starfield';
+import Image from "next/image";
+import zon4Img from "../images/Zon4.jpg";
+import whoYouAreImg from "../images/whoyouarebyyourmusic-next.jpg";
 
 export default function Home() {
   const skills = [
@@ -206,93 +209,66 @@ export default function Home() {
 
       <section
         id="projects"
-        className="py-16 sm:py-20 px-4 sm:px-6 bg-white/5 rounded-2xl max-w-6xl mx-auto scroll-mt-28">
+        className="py-16 sm:py-20 px-4 sm:px-6 bg-white/5 rounded-2xl max-w-6xl mx-auto scroll-mt-28"
+      >
         <h3 className="text-center font-heading font-bold mb-8 sm:mb-10 text-3xl sm:text-4xl md:text-[37.5px]">
           Projects
         </h3>
-        <div className="grid gap-5 sm:gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="grid gap-5 sm:gap-6 grid-cols-1 sm:grid-cols-2">
           {[
-            { title: 'Obama', desc: 'desc heree', github: 'https://github.com/' },
-            { title: 'Have', desc: 'desc heree', github: 'https://github.com/' },
-            { title: 'Dih', desc: 'desc heree', github: 'https://github.com/' },
+            {
+              title: "Who You Are By Your Music Taste",
+              desc: "Describes who you are by your music taste using Spotify.",
+              github: "https://github.com/Asynccccc/whoyouarebyyourmusic-next",
+              image: whoYouAreImg,
+            },
+            {
+              title: "Zon4 Aplikasi Sistem Parkir Siswa",
+              desc: "A simple parking system application for a school. Using QR Code to store student's identity and identify if they got driving license or not.",
+              github: "https://github.com/ArvaRasendriya/SistemParkirSekolah",
+              image: zon4Img,
+            },
           ].map((project, i) => (
             <div
               key={i}
-              className="p-4 rounded-xl bg-white/10 shadow-lg hover:scale-[1.02] transition will-change-transform">
-              <div className="h-36 sm:h-40 bg-gradient-to-r from-purple-600 to-pink-500 rounded-lg mb-4" />
-              <h4 className="text-lg sm:text-xl md:text-[23.4px] font-bold mb-2">{project.title}</h4>
+              className="p-4 rounded-xl bg-white/10 shadow-lg hover:scale-[1.02] transition will-change-transform"
+            >
+              <div className="h-36 sm:h-40 rounded-lg mb-4 overflow-hidden">
+                <Image
+                  src={project.image}
+                  alt={project.title}
+                  className="w-full h-full object-cover"
+                />
+              </div>
+
+              <h4 className="text-lg sm:text-xl md:text-[23.4px] font-bold mb-2">
+                {project.title}
+              </h4>
 
               <a
                 href={project.github}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-3 py-2 rounded-lg bg-white/10 hover:bg-white/20 transition mb-3 text-sm sm:text-base">
+                className="inline-flex items-center gap-2 px-3 py-2 rounded-lg bg-white/10 hover:bg-white/20 transition mb-3 text-sm sm:text-base"
+              >
                 <span className="[&>svg]:h-4 [&>svg]:w-4 sm:[&>svg]:h-5 sm:[&>svg]:w-5">
-                  <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 496 512">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="currentColor"
+                    viewBox="0 0 496 512"
+                  >
                     <path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3 .3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5 .3-6.2 2.3zm44.2-1.7c-2.9 .7-4.9 2.6-4.6 4.9 .3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3 .7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3 .3 2.9 2.3 3.9 1.6 1 3.6 .7 4.3-.7 .7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3 .7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3 .7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z" />
                   </svg>
                 </span>
                 <span>View on GitHub</span>
               </a>
-              <p className="text-xs sm:text-sm md:text-[14.6px] opacity-80 leading-snug">{project.desc}</p>
+
+              <p className="text-xs sm:text-sm md:text-[14.6px] opacity-80 leading-snug">
+                {project.desc}
+              </p>
             </div>
           ))}
         </div>
-        <p className="text-center pt-2 text-xs sm:text-sm md:text-[14.6px]">
-          All of my projects are unfinished bruh 😂
-        </p>
-      </section>
-
-      <section id="skills" className="py-16 sm:py-20 px-4 sm:px-6 max-w-4xl mx-auto text-center relative scroll-mt-28">
-        <h3 className="font-heading font-bold mb-6 sm:mb-10 text-3xl sm:text-4xl md:text-[37.5px]">Skills</h3>
-        <div className="max-w-md mx-auto text-left space-y-2">
-          {skills.map((skill, i) => (
-            <button
-              key={i}
-              onClick={() => setSelectedSkill(skill)}
-              className="w-full flex justify-between items-center px-4 py-2 rounded-md bg-black/40 hover:bg-white/10 transition cursor-pointer">
-              <span className="text-yellow-300 text-sm sm:text-base">{skill.name}</span>
-              <span className={`${getRatingColor(skill.rating)} font-bold px-2.5 sm:px-3 py-1 rounded-md text-xs sm:text-sm`}>
-                {skill.rating}
-              </span>
-            </button>
-          ))}
-        </div>
-
-        <div className="mt-5 sm:mt-6 flex justify-between items-center px-4 py-2 bg-purple-600 rounded-md shadow-lg max-w-md mx-auto">
-          <span className="font-bold text-base">Overall</span>
-          <span className="bg-white text-black font-bold px-3 py-1 rounded-md">{overall}</span>
-        </div>
-
-        <p className="text-sm sm:text-[14.6px] mb-5 sm:mb-6 leading-relaxed mt-2">Ik, pretty bad right?</p>
-
-        {selectedSkill && (
-          <div className="fixed inset-0 flex justify-center items-center bg-black/50 z-50 p-4">
-            <div className="bg-white/10 backdrop-blur-xl p-6 sm:p-8 rounded-2xl shadow-2xl relative w-11/12 max-w-sm">
-              <button
-                onClick={() => setSelectedSkill(null)}
-                className="absolute top-2 right-2 px-2 py-1 rounded bg-purple-600 hover:bg-purple-700 text-sm">
-                X
-              </button>
-
-              <h4 className="text-xl sm:text-[23.4px] font-bold mb-3 sm:mb-4">{selectedSkill.name}</h4>
-              <p className="text-sm sm:text-[14.6px] opacity-80 mb-3">
-                <span className="font-semibold text-purple-300">Mastered:</span> {selectedSkill.description}
-              </p>
-              <p className="text-sm sm:text-[14.6px] opacity-80">
-                <span className="font-semibold text-pink-300">Currently Learning:</span> {selectedSkill.next}
-              </p>
-
-              <hr className="my-4 border-white/20" />
-              <p className="text-lg font-bold">
-                Rating:{' '}
-                <span className={`${getRatingColor(selectedSkill.rating)} px-2 py-1 rounded-md`}>
-                  {selectedSkill.rating}
-                </span>
-              </p>
-            </div>
-          </div>
-        )}
       </section>
 
       <section id="contact" className="py-16 sm:py-20 px-4 sm:px-6 text-center max-w-3xl mx-auto scroll-mt-28">
