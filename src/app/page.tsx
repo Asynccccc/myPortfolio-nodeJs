@@ -271,6 +271,56 @@ export default function Home() {
         </div>
       </section>
 
+            <section id="skills" className="py-16 sm:py-20 px-4 sm:px-6 max-w-4xl mx-auto text-center relative scroll-mt-28">
+        <h3 className="font-heading font-bold mb-6 sm:mb-10 text-3xl sm:text-4xl md:text-[37.5px]">Skills</h3>
+        <div className="max-w-md mx-auto text-left space-y-2">
+          {skills.map((skill, i) => (
+            <button
+              key={i}
+              onClick={() => setSelectedSkill(skill)}
+              className="w-full flex justify-between items-center px-4 py-2 rounded-md bg-black/40 hover:bg-white/10 transition cursor-pointer">
+              <span className="text-yellow-300 text-sm sm:text-base">{skill.name}</span>
+              <span className={`${getRatingColor(skill.rating)} font-bold px-2.5 sm:px-3 py-1 rounded-md text-xs sm:text-sm`}>
+                {skill.rating}
+              </span>
+            </button>
+          ))}
+        </div>
+
+        <div className="mt-5 sm:mt-6 flex justify-between items-center px-4 py-2 bg-purple-600 rounded-md shadow-lg max-w-md mx-auto">
+          <span className="font-bold text-base">Overall</span>
+          <span className="bg-white text-black font-bold px-3 py-1 rounded-md">{overall}</span>
+        </div>
+
+        {selectedSkill && (
+          <div className="fixed inset-0 flex justify-center items-center bg-black/50 z-50 p-4">
+            <div className="bg-white/10 backdrop-blur-xl p-6 sm:p-8 rounded-2xl shadow-2xl relative w-11/12 max-w-sm">
+              <button
+                onClick={() => setSelectedSkill(null)}
+                className="absolute top-2 right-2 px-2 py-1 rounded bg-purple-600 hover:bg-purple-700 text-sm">
+                X
+              </button>
+
+              <h4 className="text-xl sm:text-[23.4px] font-bold mb-3 sm:mb-4">{selectedSkill.name}</h4>
+              <p className="text-sm sm:text-[14.6px] opacity-80 mb-3">
+                <span className="font-semibold text-purple-300">Mastered:</span> {selectedSkill.description}
+              </p>
+              <p className="text-sm sm:text-[14.6px] opacity-80">
+                <span className="font-semibold text-pink-300">Currently Learning:</span> {selectedSkill.next}
+              </p>
+
+              <hr className="my-4 border-white/20" />
+              <p className="text-lg font-bold">
+                Rating:{' '}
+                <span className={`${getRatingColor(selectedSkill.rating)} px-2 py-1 rounded-md`}>
+                  {selectedSkill.rating}
+                </span>
+              </p>
+            </div>
+          </div>
+        )}
+      </section>
+
       <section id="contact" className="py-16 sm:py-20 px-4 sm:px-6 text-center max-w-3xl mx-auto scroll-mt-28">
         <h3 className="font-heading mb-4 sm:mb-6 font-bold text-3xl sm:text-4xl md:text-[37.5px]">Contact Me</h3>
         <p className="text-sm sm:text-[14.6px] mb-5 sm:mb-6 leading-relaxed">
