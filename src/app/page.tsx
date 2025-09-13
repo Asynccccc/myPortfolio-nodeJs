@@ -1,6 +1,7 @@
 'use client';
 import { useState } from 'react';
 import Typewriter from 'typewriter-effect';
+import Link from "next/link";
 import Starfield from '../../components/Starfield';
 import Image from "next/image";
 import zon4Img from "../images/Zon4.jpg";
@@ -91,6 +92,14 @@ export default function Home() {
         <br />
         <br />
       </div>
+<Link
+  href="/plutoprojector"
+  className="fixed top-2 left-2 z-[100] px-1 py-0.5 bg-purple-600 hover:bg-purple-700 text-white rounded text-[8px] opacity-40 hover:opacity-100 transition"
+>
+  My fav song gw
+</Link>
+
+
       <header className="fixed top-3 left-1/2 -translate-x-1/2 w-full max-w-5xl px-3 sm:px-6 z-50">
         <nav className="glass-nav px-4 sm:px-6 py-2.5 sm:py-3 flex items-center justify-between rounded-2xl shadow-lg glass-border border border-white/10">
           <a href="#home" className="font-heading font-bold text-lg sm:text-xl tracking-wide">
