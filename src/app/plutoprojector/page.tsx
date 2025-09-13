@@ -27,12 +27,12 @@ export default function PlutoProjector() {
 
       <div className="max-w-3xl mx-auto space-y-6 leading-relaxed text-justify">
         <p>
-          <span className="font-semibold">Pluto Projector</span>, the song, tells a story 
+          <span className="font-semibold">Pluto Projector</span>{`, the song, tells a story 
           about what it feels like to promise forever when you're still learning who you are. 
           Rex captures this feeling by projecting his love onto the cosmos, because sometimes 
           only the infinite nature of space feels big enough to hold what you're feeling. But 
           instead of pretending to have the answers, this song invites us to sit in the mess 
-          of it. Because in this story the only thing that's truly certain is doubt.
+          of it. Because in this story the only thing that's truly certain is doubt.`}
         </p>
         <p>
           <span className="text-purple-400">{ ` "'The great protector' is that what I'm supposed to be?" `} </span> 
